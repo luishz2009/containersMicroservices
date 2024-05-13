@@ -1,0 +1,30 @@
+#Para trabajar con el config-server
+spring:
+  application:
+    name: microservice-gateway
+  config:
+    import: optional:configserver:http://localhost:8888
+
+#Para trabajar sin el config-server
+#server:
+#  port: 8080
+#
+#spring:
+#  application:
+#    name: microservice-gateway
+#  config:
+#    import: optional:configserver:http://localhost:8888
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: students
+#          uri: http://localhost:8090
+#          predicates:
+#            - Path=/api/student/**
+#        - id: courses
+#          uri: http://localhost:9090
+#          predicates:
+#            - Path=/api/course/**
